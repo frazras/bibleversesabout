@@ -1,10 +1,5 @@
-openai==1.13.3
-pandas==2.2.1
-urllib3==1.26.6
-Flask[async]==3.0.2
-flask-cors==4.0.0
-gunicorn==21.2.0
-packaging==24.0
-gevent==24.2.1
 python-dotenv==1.0.1
-
+openai==1.30.5
+fastapi==0.111.0
+fastapi-cli==0.0.4
+uvicorn==0.30.0
