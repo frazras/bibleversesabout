@@ -15,3 +15,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.verses-container {
+  background-color: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  font-family: 'Georgia', serif;
+  color: #333;
+  text-align: left;
+  position: relative; /* Added to position the list numbers outside the container */
+}
+
+.verses-container ol {
+  
+  padding: 0;
+  margin: 0;
+  counter-reset: item; /* Reset the counter for list items */
+  padding-left: 50px; /* Increase padding to accommodate large numbers */
+}
+
+.verses-container li {
+  counter-increment: item; /* Increment the counter for each list item */
+  padding: 10px 0;
+  border-bottom: 1px solid #e1e1e1;
+  margin-bottom: 10px;
+  font-size: 1.2em; /* Increased font size for verses */
+  position: relative; /* Added to position the numbers */
+}
+
+.verses-container li::before {
+  content: counter(item) ". "; /* Display the counter number */
+  position: absolute; /* Position the number absolutely */
+  left: -50px; /* Move the number to the left outside the container */
+  top: 0; /* Align the number with the top of the list item */
+  font-size: 1.5em; /* Larger font size for the numbers */
+  color: #333; /* Color of the numbers */
+  text-align: right;
+}
+
+.verses-container li:last-child {
+  border-bottom: none;
+}
+
+.verses-container li em {
+  display: block; /* Makes the explanation appear on a new line */
+  margin-top: 5px; /* Adds spacing between the verse and the explanation */
+  font-size: 0.9em; /* Smaller font size for explanations */
+  font-weight: 100;
+}
