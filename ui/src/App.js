@@ -74,9 +74,8 @@ function App() {
 
   return (
     <div className="App m-0 p-0">
-      <div className="search-container mt-8 text-center px-4 md:px-0">
-        <label htmlFor="queryField" className="text-2xl font-bold block mb-2">10 Bible Verses About:</label>
-        
+      <div className="search-container mt-8 px-4 md:px-0">
+        <h2 className="text-2xl font-bold mb-2 text-left p-4">10 Bible Verses About:</h2>
         <div className="flex flex-row justify-center items-center">
           <input
             type="text"
@@ -105,16 +104,16 @@ function App() {
           </select>
         </div>
         {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-        <br />
+
         <button
           onClick={handleFindVersesClick}
-          className="text-lg p-4 mt-4 cursor-pointer bg-gray-200 text-black border-none rounded-md hover:bg-gray-300"
+          className="text-lg p-4 mt-2 cursor-pointer bg-gray-200 text-black border-none rounded-md hover:bg-gray-300"
         >
           {streaming ? 'Cancel' : 'Find Verses'}
         </button>
       </div>
       {verses && (
-        <div className="verses-container mt-4 mb-4 mx-4 p-6 bg-gray-100 rounded-lg shadow-inner border border-gray-300" dangerouslySetInnerHTML={{ __html: verses }}>
+        <div className="verses-container mt-2 mb-4 mx-4 p-6 bg-gray-100 rounded-lg shadow-inner border border-gray-300" dangerouslySetInnerHTML={{ __html: verses }}>
         </div>
       )}
     </div>
