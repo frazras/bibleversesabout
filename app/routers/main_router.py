@@ -25,8 +25,10 @@ async def index():
 
 @router.get("/api/health")
 @router.get("/health")
+@router.post("/api/health")
+@router.post("/health")
 def health_check():
-    return {"status": "ok"}
+    return JSONResponse({"status": "ok"}, status_code=200)
 
 @router.post('/getverses')
 async def answer(request: Request):
