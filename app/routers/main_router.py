@@ -19,6 +19,7 @@ BASE_URL = os.getenv('BASE_URL', 'https://api.openai.com/v1')  # Provide a defau
 router = APIRouter()
 
 @router.get('/')
+@router.post('/')
 async def index():
     return JSONResponse({"message": "Welcome to the API"}, status_code=200)
 
