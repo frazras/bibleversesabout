@@ -26,7 +26,7 @@ async def index():
 def health_check():
     return JSONResponse({"status": "ok"}, status_code=200)
 
-@router.post('/getverses')
+@router.post('/getverses', response_class=Response)
 async def answer(request: Request):
     data = await request.json()
     message = data.get('query')
@@ -48,4 +48,4 @@ async def answer(request: Request):
         async for response in generate_response(prompt, LLM_MODEL, API_KEY, BASE_URL):
             yield response
 
-    return StreamingResponse(generate(), media_type='text/plain')
+    return StreamingResponse(generate(), media_type='text/html')
