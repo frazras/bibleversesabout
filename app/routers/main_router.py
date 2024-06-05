@@ -23,6 +23,11 @@ router = APIRouter()
 async def index():
     return JSONResponse({"message": "Welcome to the API"}, status_code=200)
 
+@router.get("/api/health")
+@router.get("/health")
+def health_check():
+    return {"status": "ok"}
+
 @router.post('/getverses')
 async def answer(request: Request):
     data = await request.json()
