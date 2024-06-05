@@ -10,6 +10,7 @@ function App() {
   const [streaming, setStreaming] = useState(false);
   const [error, setError] = useState('');
   const abortController = useRef(null);
+  const apiUrl = "https://bibleversesabout-wwcdk.ondigitalocean.app"
 
   const serverUrl = window.location.origin;
   axios.defaults.baseURL = serverUrl;
@@ -33,7 +34,7 @@ function App() {
       setStreaming(true);
       abortController.current = new AbortController();
       try {
-        const response = await fetch("/api/getverses", {
+        const response = await fetch(`${apiUrl}/api/getverses`, {
           method: "POST",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify({query, translation}),
