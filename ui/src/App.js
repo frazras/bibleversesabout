@@ -113,7 +113,7 @@ function App() {
         </button>
       </div>
       {verses && (
-        <div className="verses-container mt-2 mb-4 mx-4 p-6 bg-gray-100 rounded-lg shadow-inner border border-gray-300" dangerouslySetInnerHTML={{ __html: verses }}>
+        <div className="v-container" dangerouslySetInnerHTML={{ __html: verses }}>
         </div>
       )}
     </div>

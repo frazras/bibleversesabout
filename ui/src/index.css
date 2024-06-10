@@ -17,23 +17,22 @@ code {
 }
 
 .verses-container {
-  background-color: #f9f9f9;
-  border: 1px solid #e1e1e1;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 20px;
+  background-color: #f3f4f6; /* bg-gray-100 */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 0 0.8rem 0 1.2rem; /* p-6 */
+  margin: 0.5rem 1rem 1rem; /* mt-2 mx-4 mb-4 */
+  box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.06); /* shadow-inner */
   font-family: 'Georgia', serif;
   color: #333;
   text-align: left;
-  position: relative; /* Added to position the list numbers outside the container */
+  position: relative;
 }
 
 .verses-container ol {
-  
-  padding: 0;
+  padding: 0 0 0 30px; /* Reduced padding for mobile */
   margin: 0;
   counter-reset: item; /* Reset the counter for list items */
-  padding-left: 50px; /* Increase padding to accommodate large numbers */
 }
 
 .verses-container li {
@@ -48,9 +47,9 @@ code {
 .verses-container li::before {
   content: counter(item) ". "; /* Display the counter number */
   position: absolute; /* Position the number absolutely */
-  left: -50px; /* Move the number to the left outside the container */
+  left: -40px; /* Adjusted left position for reduced padding on mobile */
   top: 0; /* Align the number with the top of the list item */
-  font-size: 1.5em; /* Larger font size for the numbers */
+  font-size: 1.6em; /* Adjusted font size for mobile */
   color: #333; /* Color of the numbers */
   text-align: right;
 }
@@ -64,4 +63,15 @@ code {
   margin-top: 5px; /* Adds spacing between the verse and the explanation */
   font-size: 0.9em; /* Smaller font size for explanations */
   font-weight: 100;
+}
+
+@media (max-width: 640px) {
+  .verses-container ol {
+    padding-left: 20px; /* Further reduce padding for smaller screens */
+  }
+
+  .verses-container li::before {
+    left: -35px; /* Adjust left position for smaller screens */
+    font-size: 1.6em; /* Reduce font size for smaller screens */
+  }
 }
